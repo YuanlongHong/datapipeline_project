@@ -293,14 +293,13 @@ print("\n=== Saving Processed Data ===")
 # Save dirty data
 dirty_data = df[df['flag_any_dirty_data']]
 dirty_data.to_parquet("dirty_data.parquet", index=False)
-print(f"✅ Dirty data saved: {len(dirty_data):,} records")
+print(f"Dirty data saved: {len(dirty_data):,} records")
 
 # Save clean data
 clean_data = df[~df['flag_any_dirty_data']]
 clean_data.to_parquet("clean_data.parquet", index=False)
-print(f"✅ Clean data saved: {len(clean_data):,} records")
+print(f"Clean data saved: {len(clean_data):,} records")
 
-print("\n🎉 Data analysis complete!")
 print(f"Original data: {len(df):,} records")
 print(f"Clean data: {len(clean_data):,} records")
 print(f"Dirty data: {len(dirty_data):,} records")
